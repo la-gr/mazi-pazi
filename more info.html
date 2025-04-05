@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>More Information</title>
+  <style>
+    body{
+      background-image: url("resources/tempbgInf.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+        height: 300vh;
+        width: 100vw;
+    }
+    .sticky{
+        position: sticky;
+        top:0;
+        width: 100%;
+        height: 110px;
+    }
+    #dogs{
+        position: absolute;
+        top:250px;
+        left: 185px;
+        width: 300px;
+        height: 340px;
+        transition-property: sliding-horizontally;
+    }
+    @keyframes slide-right {
+        from {
+            margin-left: -100%;
+        }
+        to {
+            margin-left: 0;
+        }
+    }
+    @keyframes slide-left {
+        from {
+            margin-left: 0;
+        }
+        to {
+            margin-left: -100%;
+            display: none;
+        }
+    }
+    #left{
+        position: absolute;
+        top: 380px;
+        left: 90px;
+        background: none;
+        border: none;
+    }
+    #right{
+        position: absolute;
+        top: 380px;
+        left: 500px;
+        background: none;
+        border: none;
+    }
+    #about{
+        position: absolute;
+        top: 180px;
+        left: 50%;
+    }
+    #info{
+        position: absolute;
+        top: 230px;
+        left: 50%;
+        width: 42%;
+        word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+<button id="left">
+    <img src="resources/arrL.png" alt="left arrow" width="75" height="75">
+</button>
+<button id="right">
+    <img src="resources/arrR.png" alt="right arrow" width="75" height="75">
+</button>
+<div id="dogContainer">
+    <img id="dogs" src="dogGR.png" alt="dog"/>
+</div>
+<p id="info"></p>
+<h1 id="about"></h1>
+
+<img class="sticky" src="resources/tempTitle.png" alt="MAZI PAZI ... phone number"/>
+
+<script src="more info.js"></script>
+
+</body>
+</html>
