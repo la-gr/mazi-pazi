@@ -2,30 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Booking</title>
+    <title>Book An Appointment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         body{
             background-image: url("resources/tempbgBo.png");
             background-repeat: no-repeat;
             background-size: cover;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            word-wrap: break-word;
+        }
+        p{
+            position: absolute;
+        }
+        input{
+            position: absolute;
         }
         .sticky{
             position: sticky;
             top:0;
             width: 100%;
         }
-        #title{
-            position: absolute;
-            top:200px;
-            left: 40%;
-            color: #c01010;
-            font-size: 50px;
+        .info{
+            left:10%;
+        }
+        #name{
+            top: 40%;
+        }
+        #first{
+            top: 45%;
+        }
+        #last{
+            top: 45%;
+            left: 30%;
+        }
+        #phon{
+            top: 55%
+        }
+        #phone{
+            top: 60%
+        }
+        #mail{
+            top: 65%
+        }
+        #email{
+            top: 70%
         }
     </style>
 </head>
 <body>
 
-<h1 id="title">BOOKING</h1>
+<p id="name">Enter your name:</p>
+<input type="text" class="info" id="first" placeholder="First Name">
+<input type="text" class="info" id="last" placeholder="last name">
+<p id="phon">Enter your phone number:</p>
+<input type="text" class="info" id="phone" placeholder="e.g. (123) 456-7890">
+<p id="mail">Enter your email:</p>
+<input type="text" class="info" id="email" placeholder="e.g. (person@example.com)">
+
 <img class="sticky" src="resources/tempTitle.png" alt="MAZI PAZI ... phone number"/>
 
 

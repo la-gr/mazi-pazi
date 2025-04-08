@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Mazi Pazi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         body{
             background-image: url("resources/bgtemp2.png");
@@ -10,30 +13,36 @@
             background-size: cover;
             height: 600vh;
             overflow: auto;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            word-wrap: break-word;
         }
         .sticky{
             position: sticky;
             top:0;
-            width: 100%;
+            width: 100vw;
         }
         #sit{
             position: absolute;
-            left: 800px;
-            top: 200px;
+            left: 55%;
+            top: 35%;
         }
         #gr{
             position: absolute;
-            left: 300px;
-            top:200px;
+            left: 25%;
+            top: 35%;
         }
         #grm{
             position: absolute;
-            left: 400px;
+            left: 30%;
             top:600px;
         }
         #sm{
             position: absolute;
-            left: 900px;
+            left: 60%;
             top:600px;
         }
         #grb{
@@ -46,6 +55,83 @@
             left: 920px;
             top:650px;
         }
+        #person{
+            position: absolute;
+            left: 23%;
+            top: 105%;
+        }
+        #about-me{
+            position: absolute;
+            font-weight: 300;
+            left:48%;
+            top: 115%;
+            width: 30%;
+        }
+        #title-about{
+            position: absolute;
+            font-weight: 500;
+            left:48%;
+            top:108%;
+        }
+        #message{
+            position: absolute;
+            height: 45vh;
+            width: 50vw;
+            top: 160%;
+            left: 25%;
+            background-image: url("resources/messag send.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 130px;
+        }
+        .info{
+            position: absolute;
+            left: 5%;
+            width: 50%;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            font-variation-settings: "wdth" 200;
+            background:none;
+        }
+        .info:focus{
+            outline:none;
+        }
+        #ques{
+            position: absolute;
+            left:5%;
+            top:0;
+            font-size: 40px;
+        }
+        #name{
+            top: 30%;
+            border-bottom-style: groove;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        #email{
+            top:40%;
+            border-bottom-style: groove;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        #mess{
+            top:50%;
+            height: 15vh;
+            resize: none;
+        }
+        #send{
+            top: 80%;
+            background-color: #a2dc94;
+            padding: 5px;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -57,6 +143,21 @@
 <button id="grb">BOOK</button>
 <button id="sb">BOOK</button>
 
+<!-- the "about me" section -->
+<img id="person" src="person.png" alt="ivana" width="300" height="314"/>
+<h1 id="title-about">ABOUT ME</h1>
+<p id="about-me">hello this is sum stuff about me: wow wo w wow dogs i have a dog yayay woopee dogs. I like to groom and take care of dogs i love dgos yes yes yes yes.</p>
+
+<!-- messaging -->
+<div id="message">
+    <h1 id="ques">Have Questions? Contact Me!</h1>
+    <input type="text" class="info" id="name" placeholder="Name">
+    <input type="text" class="info" id="email" placeholder="Email*">
+    <textarea id="mess" class="info" placeholder="Message"></textarea>
+    <button class="info" id="send">Send</button>
+</div>
+
+<!-- sticky title -->
 <img class="sticky" src="resources/tempTitle.png" alt="MAZI PAZI ... phone number"/>
 
 

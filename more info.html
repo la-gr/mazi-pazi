@@ -3,83 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>More Information</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <style>
     body{
-      background-image: url("resources/tempbgInf.png");
-      background-repeat: no-repeat;
-      background-size: cover;
+        background-image: url("resources/tempbgInf.png");
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 300vh;
-        width: 100vw;
+        width: 100%;
+        margin:0;
+        padding:0;
+        font-family: "IBM Plex Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        word-wrap: break-word;
     }
     .sticky{
         position: sticky;
         top:0;
         width: 100%;
-        height: 110px;
+        height: 7%;
+        z-index: 5;
     }
-    #dogs{
+    .dogContainer{
         position: absolute;
-        top:250px;
-        left: 185px;
-        width: 300px;
-        height: 340px;
-        transition-property: sliding-horizontally;
+        top:24%;
+        left: 12%;
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        padding: 2rem;
+        box-sizing: border-box;
+        z-index: 1;
     }
-    @keyframes slide-right {
-        from {
-            margin-left: -100%;
-        }
-        to {
-            margin-left: 0;
-        }
+    .dogWrapper{
+        position:relative;
+        max-width: 30rem;
+        margin: 0 auto;
     }
-    @keyframes slide-left {
-        from {
-            margin-left: 0;
-        }
-        to {
-            margin-left: -100%;
-            display: none;
-        }
+    .dog{
+        display: flex;
+        aspect-ratio: 1/1;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+        border-radius:0.5rem;
     }
-    #left{
+    .dog img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
+    }
+    .dogNav{
+        display: flex;
+        column-gap: 1rem;
         position: absolute;
-        top: 380px;
-        left: 90px;
-        background: none;
-        border: none;
+        bottom: 0.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
     }
-    #right{
-        position: absolute;
-        top: 380px;
-        left: 500px;
-        background: none;
-        border: none;
+    .dogNav img{
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        opacity: 0.65;
+        transition: opacity ease 0.25s, transform 0.25s ease;
+        border: 2px antiquewhite solid;
+    }
+    .dogNav img:hover{
+        opacity: 1;
+        transform: scale(1.05);
     }
     #about{
         position: absolute;
-        top: 180px;
+        top: 25%;
         left: 50%;
+        background-color: antiquewhite;
+        border-radius: 0.5rem;
+        padding: 1rem 2rem 1rem 1rem;
     }
     #info{
         position: absolute;
-        top: 230px;
+        top: 34%;
         left: 50%;
-        width: 42%;
-        word-wrap: break-word;
+        width: 35%;
+        background-color: antiquewhite;
+        border-radius: 0.5rem;
+        padding: 1rem;
     }
   </style>
 </head>
 <body>
 
-<button id="left">
-    <img src="resources/arrL.png" alt="left arrow" width="75" height="75">
-</button>
-<button id="right">
-    <img src="resources/arrR.png" alt="right arrow" width="75" height="75">
-</button>
-<div id="dogContainer">
-    <img id="dogs" src="dogGR.png" alt="dog"/>
+<div class="dogContainer">
+    <div class="dogWrapper">
+        <div class="dog">
+            <img id="img1" src="tempbg.png" alt="dog"/>
+            <img id="img2" src="tempbg.png" alt="dog"/>
+            <img id="img3" src="tempbg.png" alt="dog"/>
+        </div>
+        <div class="dogNav">
+            <img id="lil1" src="dogGR.png" alt="dog1" onclick="scrollToImage(0)" />
+            <img id="lil2" src="dog2.png" alt="dog2" onclick="scrollToImage(1)" />
+            <img id="lil3" src="dog3.png" alt="dog3" onclick="scrollToImage(2)" />
+        </div>
+    </div>
 </div>
 <p id="info"></p>
 <h1 id="about"></h1>
