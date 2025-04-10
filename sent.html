@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("resources/thanksBg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+        h1{
+            font-weight:500;
+            font-size: 300%;
+            position: absolute;
+            left:37%;
+            top:30%;
+            color: #3656a8;
+            text-shadow: #12166c 0 0 1px;
+        }
+        button{
+            position: absolute;
+            left: 37%;
+            top: 50%;
+            width: 20%;
+            height: 7%;
+            background-color: #a6f3f6;
+            border-radius: 1rem;
+            border-color: aqua;
+            font-size: 150%;
+        }
+        button:hover{
+            background-color: #9dd4ec;
+            border-color: #5fabda;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Message Sent!</h1>
+<button onclick="Back()" >Go Back</button>
+
+<script>
+    function Back(){
+        window.location.href = "index.html";
+    }
+</script>
+</body>
+</html>

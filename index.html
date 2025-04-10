@@ -57,20 +57,20 @@
         }
         #person{
             position: absolute;
-            left: 23%;
+            left: 5%;
             top: 105%;
         }
         #about-me{
             position: absolute;
             font-weight: 300;
-            left:48%;
+            left:28%;
             top: 115%;
             width: 30%;
         }
         #title-about{
             position: absolute;
             font-weight: 500;
-            left:48%;
+            left:28%;
             top:108%;
         }
         #message{
@@ -131,11 +131,20 @@
             font-size: 17px;
             border-radius: 10px;
         }
+        #reviews{
+            position: absolute;
+            width: 30%;
+            height: 50%;
+            background-color: #e3eee2;
+            top: 100%;
+            left: 60%;
+        }
 
     </style>
 </head>
 <body>
 
+<!-- groooming and sitting options -->
 <img id="gr" src="resources/tempgroo.png" alt="dog grooming" width="300" height="300"/>
 <img id="sit" src="resources/tempsit.png" alt="dog sitting" width="300" height="300"/>
 <button id="grm">MORE INFO</button>
@@ -145,16 +154,31 @@
 
 <!-- the "about me" section -->
 <img id="person" src="person.png" alt="ivana" width="300" height="314"/>
-<h1 id="title-about">ABOUT ME</h1>
+<h1 id="title-about">ABOUT US</h1>
 <p id="about-me">hello this is sum stuff about me: wow wo w wow dogs i have a dog yayay woopee dogs. I like to groom and take care of dogs i love dgos yes yes yes yes.</p>
+
+<!-- reviews -->
+<div id="reviews">
+    <h1>Reviews</h1>
+    <p>NAME</p>
+    <img id="s1" src="startNO.png" alt="star"/>
+    <p>Review review review yes yes ye sy esy eys eys eysyys ey s ey </p>
+</div>
 
 <!-- messaging -->
 <div id="message">
     <h1 id="ques">Have Questions? Contact Me!</h1>
-    <input type="text" class="info" id="name" placeholder="Name">
-    <input type="text" class="info" id="email" placeholder="Email*">
-    <textarea id="mess" class="info" placeholder="Message"></textarea>
-    <button class="info" id="send">Send</button>
+    <form action="https://api.web3forms.com/submit" method="POST" >
+        <input type="hidden" name="access_key" value="6a6f7391-02f6-478b-913a-482112c47dd3">
+        <input type="text" class="info" id="name" name="name" placeholder="Name" required>
+        <input type="text" class="info" id="email" name="email" placeholder="Email" required>
+        <textarea id="mess" class="info" name="message" placeholder="Message" required></textarea>
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button class="info" id="send" type="submit">Send</button>
+
+        <input type="hidden" name="redirect" value="http://localhost:63342/mazipazi/sent.html">
+
+    </form>
 </div>
 
 <!-- sticky title -->
