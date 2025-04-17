@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         body{
-            background-image: url("resources/thanksBg.png");
+            background-image: url("resources/bookBG.png");
             background-repeat: no-repeat;
             background-size: cover;
             font-family: "IBM Plex Sans", sans-serif;
@@ -36,10 +36,24 @@
             border-radius: 1rem;
             border-color: aqua;
             font-size: 150%;
+            transition: 0.3s ease;
+            color: #3656a8;
+            text-shadow: #12166c 0 0 1px;
         }
         button:hover{
-            background-color: #9dd4ec;
+            filter: brightness(110%);
             border-color: #5fabda;
+            scale: 1.07;
+        }
+        img{
+            position: absolute;
+            left: 20%;
+            top: 30%;
+            transition: 0.3s ease;
+        }
+        img:hover{
+            top: 29%;
+            content: url("dogSent.PNG");
         }
     </style>
 </head>
@@ -47,6 +61,7 @@
 
 <h1>Message Sent!</h1>
 <button onclick="Back()" >Go Back</button>
+<img src="dogSent2.PNG" alt="dogSent" width="200" height="200">
 
 <script>
     function Back(){

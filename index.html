@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         body{
-            background-image: url("resources/bgtemp2.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 600vh;
+            background-image: url("resources/mainBG.PNG");
+            background-repeat: repeat-y;
+            background-size: contain;
+            height: 250vh;
             overflow: auto;
             font-family: "IBM Plex Sans", sans-serif;
             font-optical-sizing: auto;
@@ -19,59 +19,212 @@
             font-style: normal;
             font-variation-settings: "wdth" 100;
             word-wrap: break-word;
+            margin: 0;
+            padding: 0;
+            border: none;
         }
-        .sticky{
-            position: sticky;
+        button{
+            transition: 0.2s ease;
+        }
+        button:hover{
+            filter: brightness(120%);
+            scale: 1.07;
+        }
+        #ticky{
+            background-image: url("resources/headerBg.PNG");
+            background-repeat: no-repeat;
+            background-size: 100% 50%;
             top:0;
-            width: 100vw;
+            width: 100%;
+            height: 57%;
+            position: fixed;
+            transition: 0.3s ease;
+            z-index: 99;
+        }
+        #mazi{
+            position: absolute;
+            top: 0;
+            left: 25%;
+            height: 43%;
+            width: 45%;
+            transition: 0.3s ease;
+        }
+        .lang{
+            position: absolute;
+            top: 5%;
+            left: 1%;
+            width: 7vw;
+            height: 6vh;
+            background-color: #a889a9;
+            border-radius: 0.8rem 0 0 0.8rem;
+            border-color: #936fd2;
+            border-width: 3px;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            font-size: 20px;
+            color: #422369;
+            text-shadow: #090b36 0 0 1px;
+        }
+        #srb{
+            border-right: none;
+        }
+        #eng{
+            left: 7%;
+            background-color: #e9b4ff;
+            border-color: #936fd2;
+            border-radius: 0 0.8rem 0.8rem 0;
+            border-left: none;
+        }
+        .right{
+            position: absolute;
+            top: 3%;
+            left: 80%;
+            color: #3656a8;
+            text-shadow: #090b36 0 0 1px;
+        }
+        #address{
+            top:15%;
+        }
+        .options{
+            position: relative;
+            top: 30%;
+            border-radius: 0.7rem;
+            border: 4px ridge #3e439f;
+            box-shadow: #653217 0 0 5px;
+            width:30%;
+            height:45%;
+        }
+        .DogsGr{
+            position: absolute;
+            top: 0;
+            left: -113.5%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity:0;
+            transition: opacity 1s ease;
+        }
+        .DogsDec{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity:0;
+            transition: opacity 1s ease;
         }
         #sit{
-            position: absolute;
-            left: 55%;
-            top: 35%;
+            position:absolute;
+            left: 52%;
         }
         #gr{
+            position:absolute;
+            left: 18%;
+        }
+        .text{
             position: absolute;
-            left: 25%;
-            top: 35%;
+            background-color: rgba(180, 220, 255, 0.73);
+            background-size: cover;
+            top: 70%;
+            color: #2f35a8;
+            width: 95%;
+            padding: 2% 0 2% 5%;
+            text-shadow: #122067 0 0 1.3px;
+        }
+        .but{
+            position: absolute;
+            width: 25%;
+            height: 7%;
+            top: 79%;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            font-size: 25px;
+            color: #482922;
+            text-shadow: #673812 0 0 1.3px;
+            border-radius: 1.3rem;
+            border: 4px ridge #ad793c;
+            box-shadow: #79541c 0 0 3px;
+            background-color: #ffc466;
         }
         #grm{
-            position: absolute;
-            left: 30%;
-            top:600px;
+            left: 21%;
         }
         #sm{
-            position: absolute;
-            left: 60%;
-            top:600px;
+            left: 55%;
         }
         #grb{
-            position: absolute;
-            left: 420px;
-            top:650px;
-        }
+            left: 24%;
+            top:88%;
+            width: 18%;
+            text-shadow: #4f6712 0 0 1.3px;
+            border: 4px ridge #a6a147;
+            box-shadow: #68791c 0 0 3px;
+            background-color: #d4ef62;
+                    }
         #sb{
-            position: absolute;
-            left: 920px;
-            top:650px;
+            left: 58%;
+            top: 88%;
+            width: 18%;
+            text-shadow: #4f6712 0 0 1.3px;
+            border: 4px ridge #a6a147;
+            box-shadow: #68791c 0 0 3px;
+            background-color: #d4ef62;
         }
-        #person{
+        .person{
             position: absolute;
-            left: 5%;
+            left: 25%;
             top: 105%;
+            border-radius: 2rem;
+            border: 4px ridge #3e439f;
+            box-shadow: #653217 0 0 5px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .DogsGr.active,
+        .DogsDec.active,
+        .person.active {
+            opacity: 1;
+            pointer-events: auto;
         }
         #about-me{
             position: absolute;
             font-weight: 300;
-            left:28%;
-            top: 115%;
-            width: 30%;
+            left:49%;
+            top: 111.8%;
+            width: 25%;
+            background-color: #ebf8ff;
+            border-radius: 0 0.5rem 0.5rem 0.5rem;
+            padding: 1rem;
+            border: #3656a8 ridge 3px;
+            box-shadow: #12166c 0 0 3px;
+            color: #3656a8;
+            text-shadow: #090b36 0 0 1px;
         }
         #title-about{
             position: absolute;
             font-weight: 500;
-            left:28%;
-            top:108%;
+            left:49%;
+            top:103%;
+            background-color: #ebf8ff;
+            border-radius: 0.5rem 0.5rem 0 0;
+            padding: 1rem 2rem 0.2rem 1rem;
+            border: #3656a8 ridge 3px;
+            box-shadow:
+                    0 -4px 3px -4px  #12166c,  /* top */
+                    -4px 0 3px -4px  #12166c,   /* left */
+                    4px 0 3px -4px  #12166c;   /* right */
+            color: #3656a8;
+            text-shadow: #090b36 0 0 1px;
+            z-index:10;
+            border-bottom: none;
         }
         #message{
             position: absolute;
@@ -79,31 +232,54 @@
             width: 50vw;
             top: 160%;
             left: 25%;
-            background-image: url("resources/messag send.png");
-            background-size: cover;
+            background-image: url("resources/msgBG.PNG");
             background-repeat: no-repeat;
+            background-size: contain;
             padding-top: 130px;
+        }
+        #dogmsg{
+            position: absolute;
+            top: 50%;
+            left:62%;
+            z-index: 1;
+            transition: 0.3s ease;
+        }
+        #dogmsg:hover{
+            transform: translateY(-5%);
+            content: url("resources/msgDog2.png");
         }
         .info{
             position: absolute;
             left: 5%;
-            width: 50%;
+            width: 40%;
             font-family: "IBM Plex Sans", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            font-size: 15px;
+            font-size: 18px;
             font-variation-settings: "wdth" 200;
-            background:none;
+            background: none;
+            z-index: 100;
+            color: #12166c;
+            border-color: #3656a8;
+            transition: 0.3s ease;
         }
         .info:focus{
             outline:none;
         }
+        .info::placeholder{
+            color: #3f44a2;
+        }
+        .info:hover{
+            scale: 1.02;
+        }
         #ques{
             position: absolute;
             left:5%;
-            top:0;
-            font-size: 40px;
+            top:-0.7%;
+            font-size: 48px;
+            color: #2d4a93;
+            text-shadow: #090b36 0 0 1.5px;
         }
         #name{
             top: 30%;
@@ -122,52 +298,99 @@
         #mess{
             top:50%;
             height: 15vh;
+            width: 50%;
             resize: none;
+            outline: 1px solid #3656a8;
+        }
+        #phonemsg{
+            position: absolute;
+            top:18%;
+            left:60%;
+            font-size: 27px;
+            color: #2d4a93;
+            text-shadow: #090b36 0 0 1px;
+        }
+        #emailmsg{
+            position: absolute;
+            top:28%;
+            left:60%;
+            font-size: 27px;
+            color: #2d4a93;
+            text-shadow: #090b36 0 0 1px;
         }
         #send{
             top: 80%;
-            background-color: #a2dc94;
+            background-color: #a7ee96;
             padding: 5px;
-            font-size: 17px;
+            font-size: 19px;
+            font-weight: bold;
+            color: #324d93;
+            text-shadow: #090b36 0 0 1px;
             border-radius: 10px;
-        }
-        #reviews{
-            position: absolute;
-            width: 30%;
-            height: 50%;
-            background-color: #e3eee2;
-            top: 100%;
-            left: 60%;
+            border: #6489e7 3px ridge;
+            box-shadow: #0e1254 0 0 2px;
         }
 
+        .page{
+            position: absolute;
+            color: #324d93;
+            text-shadow: #090b36 0 0 1px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #9be5f6;
+            padding: 8px 29px 10px 30px;
+            border: none;
+            top: 32%;
+            left:0;
+        }
+        #daycare{
+            left: 10%;
+            padding: 8px 30px 10px 0;
+            border-radius: 0 1rem 0 0;
+        }
     </style>
 </head>
 <body>
 
-<!-- groooming and sitting options -->
-<img id="gr" src="resources/tempgroo.png" alt="dog grooming" width="300" height="300"/>
-<img id="sit" src="resources/tempsit.png" alt="dog sitting" width="300" height="300"/>
-<button id="grm">MORE INFO</button>
-<button id="sm">MORE INFO</button>
-<button id="grb">BOOK</button>
-<button id="sb">BOOK</button>
+<!-- grooming and sitting options -->
+<div class="options" id="gr">
+    <h1 class="text" id="groom">Grooming</h1>
+</div>
+<div class="options" id="sit">
+    <img class="DogsGr" src="dogs/groom10.jpg" alt="dog"/>
+    <img class="DogsGr" src="dogs/groom11.jpg" alt="dog"/>
+    <img class="DogsGr" src="dogs/groom12.jpg" alt="dog"/>
+    <img class="DogsGr" src="dogs/groom13.jpg" alt="dog"/>
+    <img class="DogsDec" src="dogs/deco5.jpg" alt="dog"/>
+    <img class="DogsDec" src="dogs/deco6.jpg" alt="dog"/>
+    <img class="DogsDec" src="dogs/deco7.jpg" alt="dog"/>
+    <img class="DogsDec" src="dogs/deco8.jpg" alt="dog"/>
+    <h1 class="text" id="board">Daycare and Boarding</h1>
+</div>
+<button class="but" id="grm">MORE INFO</button>
+<button class="but" id="sm">MORE INFO</button>
+<button class="but" id="grb">BOOK</button>
+<button class="but" id="sb">BOOK</button>
 
 <!-- the "about me" section -->
-<img id="person" src="person.png" alt="ivana" width="300" height="314"/>
-<h1 id="title-about">ABOUT US</h1>
-<p id="about-me">hello this is sum stuff about me: wow wo w wow dogs i have a dog yayay woopee dogs. I like to groom and take care of dogs i love dgos yes yes yes yes.</p>
+<img class="person" src="ivana1.jpg" alt="ivana" width="300" height="300"/>
+<img class="person" src="ivana2.jpg" alt="ivana" width="300" height="300"/>
+<img class="person" src="ivana3.jpg" alt="ivana" width="300" height="300"/>
+<img class="person" src="ivana4.jpg" alt="ivana" width="300" height="300"/>
 
-<!-- reviews -->
-<div id="reviews">
-    <h1>Reviews</h1>
-    <p>NAME</p>
-    <img id="s1" src="startNO.png" alt="star"/>
-    <p>Review review review yes yes ye sy esy eys eys eysyys ey s ey </p>
-</div>
+<h1 id="title-about">About Us</h1>
+<p id="about-me">Mazi Pazi has 10 years of love, care, and patience for caring for your furry friends.
+    Whether it's their recreation, hygeine and hair cuts, or having a comfortable and safe
+    environment to vacation to. An environment where they have all the same benefits that they have at home - such as
+    sleeping on their own pillow or bed with backyard access at all times.</p>
+
 
 <!-- messaging -->
 <div id="message">
-    <h1 id="ques">Have Questions? Contact Me!</h1>
+    <img id="dogmsg" src="msgDog.PNG" alt="dog" width="280" height="210"/>
+    <h1 id="ques">Contact Me!</h1>
+    <h5 id="phonemsg">(123)-456-7890</h5>
+    <h5 id="emailmsg">person@email.com</h5>
     <form action="https://api.web3forms.com/submit" method="POST" >
         <input type="hidden" name="access_key" value="6a6f7391-02f6-478b-913a-482112c47dd3">
         <input type="text" class="info" id="name" name="name" placeholder="Name" required>
@@ -181,11 +404,19 @@
     </form>
 </div>
 
-<!-- sticky title -->
-<img class="sticky" src="resources/tempTitle.png" alt="MAZI PAZI ... phone number"/>
+<!-- title -->
+<div id="ticky">
+    <img id="mazi" src="headerTitile.PNG" alt="MAZI PAZI"/>
+    <button class="lang" id="srb">SRB</button>
+    <button class="lang" id="eng">ENG</button>
+    <button class="page" id="grooming">Grooming</button>
+    <button class="page" id="daycare">Daycare/Boarding</button>
+    <h2 class="right" id="phone">(123)-456-7890</h2>
+    <h2 class="right" id="address">999 Address Street</h2>
+</div>
 
 
-<script src="index.js"></script>
+<script src="index.js" type="module"></script>
 
 </body>
 </html>
